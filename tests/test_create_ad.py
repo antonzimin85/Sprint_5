@@ -16,8 +16,6 @@ class TestAdCreation:
 
         assert authorize_title_text == expected_authorize_title_text
 
-        webdriver_instance.quit()
-
     def test_ad_creation_registered_user_ad_is_created(self, webdriver_instance, existing_user_credentials, product_with_attributes):
         webdriver_instance.get(BASE_URL)
         WebDriverWait(webdriver_instance, 3).until(
@@ -60,5 +58,3 @@ class TestAdCreation:
         assert user_ad_product_name == product_name
         assert user_ad_product_price == f'{product_price} ₽'
         assert user_ad_city == expected_user_ad_city
-
-        webdriver_instance.quit()

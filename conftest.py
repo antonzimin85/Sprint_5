@@ -6,7 +6,8 @@ from selenium import webdriver
 @pytest.fixture(scope='function')
 def webdriver_instance():
     driver = webdriver.Chrome()
-    return driver
+    yield driver
+    driver.quit()
 
 @pytest.fixture(scope='function')
 def new_user_credentials():

@@ -31,8 +31,6 @@ class TestUserRegistration:
         assert user_avatar.is_displayed()
         assert user_name == 'User.'
 
-        webdriver_instance.quit()
-
     @pytest.mark.parametrize('incorrect_email', ['test.net', 'test@.net', '@test.net', 'test@.', 'test@test', 'test@test.'])
     def test_user_registration_incorrect_email_error_is_displayed(self, webdriver_instance, incorrect_email):
         webdriver_instance.get(BASE_URL)
@@ -60,8 +58,6 @@ class TestUserRegistration:
         assert email_input_field_border_color == expected_border_color
         assert password_field_border_color == expected_border_color
         assert repeat_password_field_border_color == expected_border_color
-
-        webdriver_instance.quit()
 
     def test_user_registration_existing_user_error_is_displayed(self, webdriver_instance, existing_user_credentials):
         webdriver_instance.get(BASE_URL)
@@ -93,5 +89,3 @@ class TestUserRegistration:
         assert email_input_field_border_color == expected_border_color
         assert password_field_border_color == expected_border_color
         assert repeat_password_field_border_color == expected_border_color
-
-        webdriver_instance.quit()

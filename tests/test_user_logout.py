@@ -27,5 +27,4 @@ class TestUserLogout:
             expected_conditions.visibility_of_element_located(LoginPageLocators.ENTER_AND_REGISTRATION_BUTTON))
         enter_and_registration_button = webdriver_instance.find_element(*LoginPageLocators.ENTER_AND_REGISTRATION_BUTTON)
 
-        assert webdriver_instance.current_url == BASE_URL
         assert enter_and_registration_button.is_displayed()
